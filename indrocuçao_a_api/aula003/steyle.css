@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo do jogo */
+body {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(180deg, #1b1b1b, #0f0f0f);
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+/* Grade gamer animada */
+body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 200%;
+    height: 200%;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+    background-size: 40px 40px;
+
+    animation: mover 8s linear infinite;
+}
+
+@keyframes mover {
+    from {
+        transform: translate(0,0);
+    }
+
+    to {
+        transform: translate(-40px,-40px);
+    }
+}
+
+/* Input */
+#pokemonInput {
+    width: 320px;
+
+    padding: 15px;
+
+    border: 2px solid #ffcb05;
+
+    border-radius: 12px;
+
+    background: rgba(0,0,0,0.8);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+
+    z-index: 1;
+
+    box-shadow: 0 0 15px #ffcb05;
+
+    margin-bottom: 15px;
+}
+
+#pokemonInput::placeholder {
+    color: #ccc;
+}
+
+/* Botão */
+#btn-buscar {
+    width: 320px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: linear-gradient(90deg, #ff0000, #ffcb05);
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    z-index: 1;
+
+    box-shadow: 0 0 20px rgba(255,0,0,0.7);
+}
+
+#btn-buscar:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 0 25px #ffcb05;
+}
+
+/* Card Pokémon */
+#resultado {
+    margin-top: 25px;
+
+    width: 320px;
+
+    min-height: 250px;
+
+    background: rgba(0,0,0,0.85);
+
+    border: 3px solid #3b4cca;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: white;
+
+    z-index: 1;
+
+    box-shadow: 0 0 25px #3b4cca;
+}
+
+/* Imagem Pokémon */
+#resultado img {
+    width: 160px;
+
+    image-rendering: pixelated;
+
+    filter: drop-shadow(0 0 15px #ffcb05);
+}
+
+/* Nome */
+#resultado h2 {
+    margin: 15px 0;
+
+    font-size: 30px;
+
+    color: #ffcb05;
+
+    text-transform: capitalize;
+
+    text-shadow: 0 0 10px #ffcb05;
+}
+
+/* Informações */
+#resultado p {
+    margin: 10px 0;
+
+    font-size: 18px;
+
+    color: #ddd;
+}
